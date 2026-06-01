@@ -1,6 +1,7 @@
 import Icon from "@/components/ui/icon";
 
-const TG_LINK = "https://t.me/your_username";
+const TG_LINK = "https://t.me/julia_rumyantceva";
+const PHOTO = "https://cdn.poehali.dev/projects/2aa2bacf-8484-4ffc-b714-e46beee1989c/bucket/94773d6b-64f8-435d-85ef-0b97a1ee3d52.jpg";
 
 export default function Index() {
   return (
@@ -10,7 +11,7 @@ export default function Index() {
         <div className="flex items-center gap-2">
           <span className="text-xl">🌿</span>
           <span className="font-semibold text-sm tracking-wide" style={{ fontFamily: "'Golos Text', sans-serif", color: "var(--green-deep)" }}>
-            Нутрициолог
+            Юлия Румянцева
           </span>
         </div>
         <div className="hidden md:flex gap-8 text-sm" style={{ color: "var(--green-deep)" }}>
@@ -57,11 +58,11 @@ export default function Index() {
 
             <div className="fade-up fade-up-delay-4 flex gap-8 mt-12 pt-8" style={{ borderTop: "1px solid var(--green-pale)" }}>
               <div>
-                <div className="section-title text-3xl" style={{ color: "var(--green-deep)" }}>200+</div>
+                <div className="section-title text-3xl" style={{ color: "var(--green-deep)" }}>800+</div>
                 <div className="text-sm mt-1" style={{ color: "var(--brown-warm)" }}>клиентов</div>
               </div>
               <div>
-                <div className="section-title text-3xl" style={{ color: "var(--green-deep)" }}>5 лет</div>
+                <div className="section-title text-3xl" style={{ color: "var(--green-deep)" }}>15 лет</div>
                 <div className="text-sm mt-1" style={{ color: "var(--brown-warm)" }}>практики</div>
               </div>
               <div>
@@ -75,8 +76,8 @@ export default function Index() {
             <div className="relative w-80 h-96 md:w-96 md:h-[500px]">
               <div className="absolute inset-0 organic-blob overflow-hidden" style={{ backgroundColor: "var(--green-pale)" }}>
                 <img
-                  src="https://cdn.poehali.dev/projects/2aa2bacf-8484-4ffc-b714-e46beee1989c/files/6db00549-55b4-408f-b46b-dcb66454c54c.jpg"
-                  alt="Нутрициолог"
+                  src={PHOTO}
+                  alt="Юлия Румянцева — нутрициолог"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -89,8 +90,8 @@ export default function Index() {
               </div>
               <div className="absolute -top-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-lg" style={{ border: "1px solid var(--green-pale)" }}>
                 <div className="text-xl mb-1">🌿</div>
-                <div className="text-xs font-medium" style={{ color: "var(--green-deep)" }}>Натуральный</div>
-                <div className="text-xs" style={{ color: "var(--brown-warm)" }}>подход</div>
+                <div className="text-xs font-medium" style={{ color: "var(--green-deep)" }}>15 лет</div>
+                <div className="text-xs" style={{ color: "var(--brown-warm)" }}>практики</div>
               </div>
             </div>
           </div>
@@ -104,18 +105,25 @@ export default function Index() {
             <p className="text-sm font-medium tracking-widest uppercase text-center px-4" style={{ color: "var(--green-mid)" }}>Обо мне</p>
           </div>
           <h2 className="section-title text-4xl md:text-5xl text-center mb-16" style={{ color: "var(--green-deep)" }}>
-            Путь к здоровью начинается<br />с понимания себя
+            Юлия Румянцева
           </h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-5 text-base leading-relaxed" style={{ color: "var(--brown-warm)", fontFamily: "'Golos Text', sans-serif" }}>
-              <p>
-                Меня зовут Юлия Румянцева. Я нутрициолог с дипломом и многолетней практикой. Моя философия — питание должно быть радостью, а не наказанием.
-              </p>
-              <p>
-                Я не верю в жёсткие диеты и ограничения. Вместо этого я помогаю создать устойчивый рацион, который подходит именно вашему телу, образу жизни и вкусам.
-              </p>
-              <p>
-                Работала с клиентами разного возраста — от молодых людей, стремящихся к спортивным результатам, до женщин в период менопаузы. Каждый путь уникален.
+              <p className="text-lg font-medium" style={{ color: "var(--green-deep)" }}>Нутрициолог</p>
+              <ul className="space-y-3">
+                {[
+                  "Член Общества Диетологов и Нутрициологов России",
+                  "Специалист по психологии пищевого поведения",
+                  "Сертифицированный тренер по аэробике и танцевальному фитнесу",
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex-shrink-0 text-base" style={{ color: "var(--green-mid)" }}>✔️</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="pt-2 text-base font-medium" style={{ color: "var(--green-deep)" }}>
+                За 15 лет мой проект дал результаты более 800 клиентам!
               </p>
               <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="tg-btn inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm mt-2">
                 <Icon name="MessageCircle" size={16} />
@@ -124,10 +132,10 @@ export default function Index() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: "🎓", title: "Образование", text: "Диплом нутрициолога, курсы функционального питания" },
-                { icon: "🌱", title: "Подход", text: "Натуральные продукты, сезонность, осознанное питание" },
-                { icon: "💚", title: "Ценности", text: "Здоровье без стресса, гармония тела и разума" },
-                { icon: "📋", title: "Практика", text: "Индивидуальные программы для каждого клиента" },
+                { icon: "🏛️", title: "Член ОДиН России", text: "Официальный член Общества Диетологов и Нутрициологов России" },
+                { icon: "🧠", title: "Психология питания", text: "Специалист по психологии пищевого поведения" },
+                { icon: "🏃‍♀️", title: "Фитнес-тренер", text: "Сертифицированный тренер по аэробике и танцевальному фитнесу" },
+                { icon: "🌟", title: "800+ клиентов", text: "За 15 лет практики помогла сотням людей изменить жизнь" },
               ].map((item) => (
                 <div key={item.title} className="bg-white rounded-2xl p-5 card-hover" style={{ border: "1px solid var(--green-pale)" }}>
                   <div className="text-2xl mb-2">{item.icon}</div>
@@ -154,18 +162,27 @@ export default function Index() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
+            {/* Консультация */}
             <div className="bg-white rounded-3xl p-8 card-hover relative overflow-hidden" style={{ border: "1px solid var(--green-light)" }}>
               <div className="absolute top-0 right-0 w-32 h-32 opacity-10 organic-blob" style={{ backgroundColor: "var(--green-mid)", transform: "translate(20%, -20%)" }} />
               <div className="relative">
                 <div className="text-4xl mb-4">🌿</div>
                 <h3 className="section-title text-3xl mb-3" style={{ color: "var(--green-deep)" }}>Консультация</h3>
                 <p className="text-sm leading-relaxed mb-6" style={{ color: "var(--brown-warm)" }}>
-                  Разовая встреча, на которой мы разберём ваш текущий рацион, поставим цели и составим базовый план питания.
+                  Разовая встреча — разберём ваш рацион, поставим цели и составим персональный план питания.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {["Анализ текущего питания", "Разбор анализов и показателей", "Базовый план питания", "Рекомендации по образу жизни", "60–90 минут"].map(item => (
-                    <li key={item} className="flex items-center gap-3 text-sm" style={{ color: "var(--green-deep)" }}>
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "var(--green-pale)" }}>
+                  {[
+                    "Анализ текущего питания",
+                    "Разбор анализов и показателей",
+                    "Базовый план питания",
+                    "Рекомендации по дополнительному обследованию (лабораторным тестам и др.), при необходимости",
+                    "Расшифровка анализов",
+                    "Рекомендации по витаминам, нутрицевтикам и поддерживающим нелекарственным препаратам (при необходимости)",
+                    "60–90 минут",
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--green-deep)" }}>
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: "var(--green-pale)" }}>
                         <Icon name="Check" size={12} />
                       </div>
                       {item}
@@ -185,6 +202,7 @@ export default function Index() {
               </div>
             </div>
 
+            {/* Сопровождение */}
             <div className="rounded-3xl p-8 card-hover relative overflow-hidden" style={{ background: "linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%)" }}>
               <div className="absolute top-0 right-0 w-40 h-40 opacity-10 organic-blob" style={{ backgroundColor: "white", transform: "translate(20%, -20%)" }} />
               <div className="relative">
@@ -197,9 +215,15 @@ export default function Index() {
                   Месяц совместной работы с постоянной поддержкой, корректировкой рациона и ответами на все вопросы.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  {["Персональный план питания", "Еженедельные корректировки", "Поддержка в мессенджере", "Работа с пищевым поведением", "Рецепты под ваш вкус"].map(item => (
-                    <li key={item} className="flex items-center gap-3 text-sm" style={{ color: "var(--cream)" }}>
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+                  {[
+                    "Персонализированная программа питания и нутрицевтической поддержки на основе анализов",
+                    "Контроль за питанием на основании дневника питания и выполнением рекомендованных упражнений",
+                    "Еженедельные консультации — обсуждаем прогресс и договариваемся о следующих действиях",
+                    "Оперативная связь по мессенджеру, ответы на вопросы (рабочее время)",
+                    "Поддержка и мотивация",
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--cream)" }}>
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
                         <Icon name="Check" size={12} />
                       </div>
                       {item}
@@ -208,7 +232,7 @@ export default function Index() {
                 </ul>
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="section-title text-3xl" style={{ color: "var(--cream)" }}>от 12 000 ₽</div>
+                    <div className="section-title text-3xl" style={{ color: "var(--cream)" }}>от 8 000 ₽</div>
                     <div className="text-xs" style={{ color: "rgba(248,244,236,0.7)" }}>в месяц</div>
                   </div>
                   <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium text-sm transition-all hover:opacity-90" style={{ backgroundColor: "var(--cream)", color: "var(--green-deep)" }}>
@@ -295,7 +319,7 @@ export default function Index() {
               className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full font-medium text-base transition-all hover:opacity-90 hover:-translate-y-1"
               style={{ backgroundColor: "var(--cream)", color: "var(--green-deep)" }}>
               <Icon name="Send" size={20} />
-              Написать в Telegram
+              @julia_rumyantceva
             </a>
           </div>
 
@@ -316,7 +340,7 @@ export default function Index() {
       </section>
 
       <footer className="py-6 px-6 text-center text-xs" style={{ backgroundColor: "var(--green-deep)", color: "rgba(248,244,236,0.35)", borderTop: "1px solid rgba(248,244,236,0.08)" }}>
-        © 2026 Нутрициолог. Сделано с заботой о вашем здоровье 🌿
+        © 2026 Юлия Румянцева — Нутрициолог. Сделано с заботой о вашем здоровье 🌿
       </footer>
 
       {/* Floating TG button mobile */}
